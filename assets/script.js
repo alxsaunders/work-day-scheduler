@@ -5,30 +5,31 @@ $("#currentDay").text(moment().format("MMMM Do YYYY"));
 
 let description = $(".description");
 let saveButton = $(".saveBtn");
-let currentHour = moment().hours()
+let currentHour = moment().hours();
 
 
 console.log(currentHour);
 console.log(typeof currentHour);
+//Color coding the time blocks using each and comparing the moment current time (currentHour) to the id attribute assigned to the textarea.
+description.each(function () {
+    let timeBlock = parseInt($(this).attr("id"));
 
-description.each(function() {
-    let timeBlock = parseInt($(this).attr('id'))
-//added if else statments to check the current time and to remove or class classes based on results
-    if(timeBlock === currentHour) {
+    if (timeBlock === currentHour) {
         $(this).addClass("present");
         $(this).removeClass("future");
         $(this).removeClass("past");
-    
     }
     else if (timeBlock < currentHour) {
-        $(this).addClass("past")
-        $(this).removeClass("future")
-        $(this).removeClass("present")
-    }else {
-        $(this).addClass("future")
-        $(this).removeClass("past")
-        $(this).removeClass("present")
+        $(this).addClass("past");
+        $(this).removeClass("future");
+        $(this).removeClass("present");
     }
+    else {
+        $(this).addClass("future");
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+    }
+});
 
     description.each(function() {
 //for loop to store all data in text area 
@@ -50,8 +51,8 @@ description.each(function() {
 
     })
 
-})
 
+    //Function to save task input once the save button is clicked. 
 function saveTasks() {
     
     let rowHour = $(this).siblings(".hour").text();
