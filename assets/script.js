@@ -32,7 +32,7 @@ description.each(function () {
 });
 
     description.each(function() {
-//for loop to store all data in text area 
+//for loop to store all data in text area in local storage 
         for (let i = 0; i < localStorage.length; i++) {
             let objectKey = localStorage.key(i)
             let taskValue = localStorage.getItem(objectKey)

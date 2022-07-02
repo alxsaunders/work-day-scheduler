@@ -27,3 +27,9 @@ THEN the saved events persist
 ```
 
 ScreenShot
+![ScreenShot](./assets/images/screenschot.png)
+
+
+Deployed Page
+Live Deploy Link: [CLICK HERE](https://alxsaunders.github.io/work-day-scheduler/)
+
