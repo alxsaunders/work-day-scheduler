@@ -30,7 +30,35 @@ description.each(function() {
         $(this).removeClass("present")
     }
 
+    description.each(function() {
+
+        for (let i = 0; i < localStorage.length; i++) {
+            let objectKey = localStorage.key(i)
+            let taskValue = $(this).siblings(".hour").text()
+
+        console.log(rowHour);
+        console.log(objectKey);
+        console.log(taskValue);
+        
+
+        if(objectKey === rowHour) {
+            $(this).val(taskValue);
+        }
+        }
+
+    })
+
 })
+
+function saveTasks() {
+    let currentTime = $(this).data("hour");
+    let rowHour = $(this).siblings(".hour").text()
+    let task = $(this).siblings(".description").val()
+
+    console.log(currentTime);
+    console.log(rowHour);
+    console.log(task);
+}
 
 
 
