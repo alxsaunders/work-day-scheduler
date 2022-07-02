@@ -28,14 +28,19 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
- <!-- Timeblocks go here -->
-    <div class="container">
-     
+ <!-- Timeblocks go here  -->
+ 
+    <div class="container pt-4">
+     <!-- added rows for blocks -->
       <div class="row time-block">
+        <!-- set classes for hours -->
       <div class="hour col-md-1 pt-4">9AM</div>
+      <!-- add text area with id to store data and track current time -->
       <textarea id = "9" class="description col-xs-1 col-sm-8 col-md-10"></textarea>
+      <!-- add button to save text in local storage -->
       <button class="saveBtn col-md-1 btn btn-info"><i class="fas fa-save"></i></button>
     </div>
+    <!-- repeated -->
     <div class="row time-block">
       <div class="hour col-md-1 pt-4">10AM</div>
       <textarea id = "10" class="description col-xs-1 col-sm-8 col-md-10"></textarea>

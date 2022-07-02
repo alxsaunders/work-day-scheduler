@@ -71,7 +71,7 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 .container {
-  width: 70vh;
+  width: 70vw;
   height: 70vh;
 }
 

@@ -13,7 +13,7 @@ console.log(typeof currentHour);
 
 description.each(function() {
     let timeBlock = parseInt($(this).attr('id'))
-
+//added if else statments to check the current time and to remove or class classes based on results
     if(timeBlock === currentHour) {
         $(this).addClass("present");
         $(this).removeClass("future");
@@ -31,10 +31,12 @@ description.each(function() {
     }
 
     description.each(function() {
-
+//for loop to store all data in text area 
         for (let i = 0; i < localStorage.length; i++) {
             let objectKey = localStorage.key(i)
-            let taskValue = $(this).siblings(".hour").text()
+            let taskValue = localStorage.getItem(objectKey)
+            let rowHour = $(this).siblings(".hour").text()
+
 
         console.log(rowHour);
         console.log(objectKey);
@@ -51,15 +53,21 @@ description.each(function() {
 })
 
 function saveTasks() {
-    let currentTime = $(this).data("hour");
-    let rowHour = $(this).siblings(".hour").text()
-    let task = $(this).siblings(".description").val()
+    
+    let rowHour = $(this).siblings(".hour").text();
+    let task = $(this).siblings(".description").val();
 
-    console.log(currentTime);
     console.log(rowHour);
     console.log(task);
+
+    if (task === "") {
+        localStorage.setItem(rowHour, "")
 }
+else {
+    localStorage.setItem(rowHour, task);
+    
+}}
 
-
+saveButton.on('click', saveTasks)
 
 })
